@@ -1,8 +1,10 @@
 try:import random,re,threading;from colorama import Fore;from requests import get,post
 except ModuleNotFoundError:exit('[!] Download The Missing Module !')
 
+	
 class Lightning:
     
+
     def __init__(self,ThreadER,length):
         self.ThreadER=ThreadER
         self.length=length
@@ -11,8 +13,8 @@ class Lightning:
     def Lightning_Saver(self,user):
         ID=''#Telegram ID
         token=''#Telegram Bot Token
-	try:post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text=• New username’s Claimed @{user} 🦦\n\nBy\t@TweakPY\t-\t@vv1ck')
-	except:pass
+        try:post(f'https://api.telegram.org/bot{token}/sendMessage?chat_id={ID}&text=• New username’s Claimed @{user} 🦦\n\nBy\t@TweakPY\t-\t@vv1ck')
+        except:pass
         with open('Lightning_Available.txt', 'a') as x:
             x.write(user+'\n')
     
@@ -53,7 +55,6 @@ class Lightning:
 	
 
 print(f"""
-
 88888888888 8888888 888    d8P        888      d8b          888      888             d8b                   
     888       888   888   d8P         888      Y8P          888      888             Y8P                   
     888       888   888  d8P          888                   888      888                                   
@@ -65,9 +66,6 @@ print(f"""
                                                         888                                            888 
                                                    Y8b d88P                                       Y8b d88P 
     By @TweakPY - @vv1ck                            "Y88P"                                         "Y88P"  
-
-
-
 {Fore.LIGHTRED_EX}01010100 01001001 01001011 00101101 01001100 01101001 01100111 01101000 01110100 01101110 01101001 01101110 01100111{Fore.RESET}
 """)		
 ThreadER=int(input(f'[{Fore.LIGHTRED_EX}?{Fore.RESET}] Thread  [{Fore.LIGHTRED_EX}50-100{Fore.RESET}]: '))
