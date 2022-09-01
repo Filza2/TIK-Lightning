@@ -43,7 +43,8 @@ class Lightning:
                 else:
                     print(f'[{Fore.MAGENTA}${Fore.RESET}] {Fore.LIGHTRED_EX} Not Available {Fore.RESET} : {user} ')	
         except Exception as i:
-            raise UserWarning(f'Error Found : {i}')
+            #raise UserWarning(f'Error Found : {i}')
+            pass
     
     
     def Lightning_starter(self):
