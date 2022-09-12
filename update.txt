@@ -1,2 +1,2 @@
-update=2.1
+update=2.2
 New update has been uploaded
