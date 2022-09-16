@@ -1,5 +1,5 @@
 try:import random,os,re,threading;from colorama import Fore;from requests import get,post
-except ModuleNotFoundError:exit('[!] Download The Missing Module !')
+except Exception as e:print(f'[!] Download The Missing Module ! , {e}');exit()
 
 
 class Lightning:
