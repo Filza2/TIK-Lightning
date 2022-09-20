@@ -51,11 +51,9 @@ class Lightning:
             while True:
                 user=self.Lightning_User_Maker()
                 ru=get(f"https://tokcount.com/?user={user}",headers={'Host': 'tokcount.com','User-Agent': 'Mozilla/5.0 (X11; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0','Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8','Accept-Language': 'ar,en-US;q=0.7,en;q=0.3','Accept-Encoding': 'gzip, deflate','Upgrade-Insecure-Requests': '1','Sec-Fetch-Dest': 'document','Sec-Fetch-Mode': 'navigate','Sec-Fetch-Site': 'none','Sec-Fetch-User': '?1','Cache-Control': 'max-age=0','Te': 'trailers'})				
-                if 'undefined' in re.findall('<title>(.*?)</title>',ru.text)[0]:
+                if 'error' in re.findall('<title>(.*?)</title>',ru.text)[0]:
                     self.Lightning_N2(user)
-                elif 'false' in re.findall('"success":(.*?),',ru.text)[0]:
-                    self.Lightning_N2(user)
-                elif 'true' in re.findall('"success":(.*?),',ru.text)[0]:
+                elif re.findall(',"id":"(.*?)"',ru.text)[0] in ru.text:
                     print(f'[{Fore.MAGENTA}${Fore.RESET}] {Fore.LIGHTRED_EX} Not Available {Fore.RESET} : {user} ')			
                 else:
                     print(f'[{Fore.MAGENTA}${Fore.RESET}] {Fore.LIGHTRED_EX} Not Available {Fore.RESET} : {user} ')	
@@ -95,7 +93,6 @@ class Lightning:
 	
 
 print(f"""
-
 ████████╗██╗██╗  ██╗     ██╗     ██╗ ██████╗ ██╗  ██╗████████╗   
 ╚══██╔══╝██║██║ ██╔╝     ██║     ██║██╔════╝ ██║  ██║╚══██╔══╝   
    ██║   ██║█████╔╝█████╗██║     ██║██║  ███╗███████║   ██║      
@@ -105,7 +102,7 @@ print(f"""
                                                                                                       
                  By @TweakPY - @vv1ck                                                                 
 """)		
-update='2.2'
+update='2.3'
 try:
     s=get("https://raw.githubusercontent.com/Filza2/TIK-Lightning/main/update.txt").text
     if update in s:pass
